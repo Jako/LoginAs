@@ -1,0 +1,18 @@
+{
+  "name": "loginas",
+  "description": "Login as manager user into frontend accounts without a password",
+  "author": "Thomas Jakobi <office@treehillstudio.com>",
+  "private": true,
+  "devDependencies": {
+    "date-format": "^4.0.14",
+    "gulp": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "@fomantic/gulp-header": "^2.1.1",
+    "gulp-replace": "^1.1.4",
+    "gulp-uglify": "^3.0.2",
+    "uglify-js": "^3.19.3"
+  },
+  "browserslist": [
+    "default"
+  ]
+}

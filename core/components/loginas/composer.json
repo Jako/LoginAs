@@ -1,0 +1,26 @@
+{
+  "name": "treehillstudio/loginas",
+  "description": "Login as manager user into frontend accounts without a password",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Thomas Jakobi",
+      "email": "office@treehillstudio.com",
+      "homepage": "https://treehillstudio.com"
+    }
+  ],
+  "license": "GPL-2.0-or-later",
+  "config": {
+    "platform": {
+      "php": "7.4"
+    }
+  },
+  "require": {
+    "php": ">=7.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "TreehillStudio\\LoginAs\\": "src/"
+    }
+  }
+}

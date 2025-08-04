@@ -1,0 +1,79 @@
+{
+  "name": "LoginAs",
+  "lowCaseName": "loginas",
+  "description": "Login as manager user into frontend accounts without a password",
+  "author": "Thomas Jakobi",
+  "version": "1.0.0",
+  "package": {
+    "menus": [
+      {
+        "text": "loginas.menu",
+        "description": "loginas.menu_desc",
+        "action": "",
+        "handler": "LoginAs.util.loginAs(); return false;",
+        "parent": "user",
+        "permissions": "loginas_loginas"
+      }
+    ],
+    "elements": {
+      "plugins": [
+        {
+          "name": "LoginAs",
+          "description": "Login as manager user into frontend accounts without a password",
+          "file": "loginas.plugin.php",
+          "events": [
+            "OnManagerPageBeforeRender",
+            "OnWebAuthentication"
+          ]
+        }
+      ]
+    },
+    "systemSettings": [
+      {
+        "key": "debug",
+        "type": "combo-boolean",
+        "area": "system",
+        "value": "0"
+      },
+      {
+        "key": "login_id",
+        "area": "system",
+        "value": "0"
+      },
+      {
+        "key": "login_context",
+        "area": "system",
+        "value": "web"
+      },
+      {
+        "key": "add_contexts",
+        "area": "system",
+        "value": ""
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "php",
+      "version": ">=7.4"
+    },
+    {
+      "name": "modx",
+      "version": ">=2.8"
+    }
+  ],
+  "build": {
+    "readme": "docs/readme.md",
+    "license": "docs/license.md",
+    "changelog": "docs/changelog.md",
+    "setupOptions": {
+      "source": "setup.options.php"
+    },
+    "resolver": {
+      "after": [
+        "resolve.permissions.php",
+        "resolve.treehillstudio.php"
+      ]
+    }
+  }
+}
