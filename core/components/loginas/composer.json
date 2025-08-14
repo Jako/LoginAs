@@ -1,7 +1,7 @@
 {
   "name": "treehillstudio/loginas",
   "description": "Login as manager user into frontend accounts without a password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Thomas Jakobi",

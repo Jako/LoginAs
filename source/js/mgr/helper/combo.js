@@ -10,8 +10,9 @@ LoginAs.combo.User = function (config) {
             action: 'mgr/user/getlist',
             combo: true
         },
-        typeAhead: true,
-        editable: true
+        editable: true,
+        minChars: 2,
+        autoSelect: false,
     });
     MODx.combo.User.superclass.constructor.call(this, config);
 };
