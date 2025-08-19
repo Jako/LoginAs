@@ -14,6 +14,12 @@ LoginAs uses the following system settings in the namespace `loginas`:
 | loginas.login_context | Login Context       | Main context for frontend authentication.                                | web     |
 | loginas.login_id      | Login ID            | ID of a MODX Resource with a Login snippet call.                         | -       |
 
+### Context with different (sub-)domains
+
+If you want to log in to a context that uses a different domain to the current manager, log in to the manager via this subdomain first.
+
+Example: The front end for the context `login` uses the subdomain `login.domain.com`. Therefore, log in to the Manager via `login.domain.com/manager` first, and then use the LoginAs feature.
+
 ### Permissions
 
 To work with the component the user must have appropriate rights:
