@@ -362,6 +362,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#contexts-with-different-sub-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexts with different (sub-)domains
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#permissions" class="md-nav__link">
     <span class="md-ellipsis">
       Permissions
@@ -436,6 +445,15 @@
   
     <nav class="md-nav" aria-label="Introduction">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contexts-with-different-sub-domains" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contexts with different (sub-)domains
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#permissions" class="md-nav__link">
@@ -513,12 +531,30 @@ web user account in the frontend.</p>
 </tr>
 </tbody>
 </table>
+<h3 id="contexts-with-different-sub-domains">Contexts with different (sub-)domains</h3>
+<p>If you need to log in to a context with a different domain than your current 
+manager one, first log in to your manager account via this domain.</p>
+<p>Example: The frontend for the context <code>login</code> uses the subdomain 
+<code>login.domain.com</code>. Therefore, first log in to the manager via 
+<code>login.domain.com/manager</code> first, and then use the LoginAs feature.</p>
 <h3 id="permissions">Permissions</h3>
-<p>To work with the component the user must have appropriate rights:</p>
-<ul>
-<li>loginas_loginas - Permission to login as manager user to a frontend account without a password.</li>
-</ul>
-<p>A sudo user is allowed to do everything.</p>
+<p>LoginAs can be restricted by permissions. The following permissions are 
+available:</p>
+<table>
+<thead>
+<tr>
+<th>Permission</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loginas_loginas</td>
+<td>Permission to login as manager user to a frontend account without a password.</td>
+</tr>
+</tbody>
+</table>
+<p>The permission checks are not executed for sudo users.</p>
 
 
 
