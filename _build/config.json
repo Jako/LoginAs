@@ -3,7 +3,7 @@
   "lowCaseName": "loginas",
   "description": "Login as manager user into frontend accounts without a password",
   "author": "Thomas Jakobi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "package": {
     "menus": [
       {

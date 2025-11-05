@@ -39,7 +39,7 @@ class LoginAs
      * The version
      * @var string $version
      */
-    public $version = '1.0.1';
+    public $version = '1.0.2';
 
     /**
      * The class options

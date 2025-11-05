@@ -13,5 +13,3 @@ Ext.extend(loginas, Ext.Component, {
 Ext.reg('loginas', loginas);
 
 LoginAs = new loginas();
-
-MODx.config.help_url = 'https://jako.github.io/LoginAs/usage/';
