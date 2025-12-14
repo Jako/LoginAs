@@ -9,7 +9,7 @@ LoginAs uses the following system settings in the namespace `loginas`:
 
 | Key                   | Name                | Description                                                              | Default |
 |-----------------------|---------------------|--------------------------------------------------------------------------|---------|
-| loginas.add_contexts  | Additional Contexts | Comma separated list of additional contexts for frontend authentication. | -       |
+| loginas.add_contexts  | Additional Contexts | Comma-separated list of additional contexts for frontend authentication. | -       |
 | loginas.debug         | Debug               | Log debug information in the MODX error log.                             | No      |
 | loginas.login_context | Login Context       | Main context for frontend authentication.                                | web     |
 | loginas.login_id      | Login ID            | ID of a MODX Resource with a Login snippet call.                         | -       |

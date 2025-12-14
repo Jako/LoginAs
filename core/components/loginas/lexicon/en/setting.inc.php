@@ -6,7 +6,7 @@
  * @subpackage lexicon
  */
 $_lang['setting_loginas.add_contexts'] = 'Additional Contexts';
-$_lang['setting_loginas.add_contexts_desc'] = 'Comma separated list of additional contexts for frontend authentication.';
+$_lang['setting_loginas.add_contexts_desc'] = 'Comma-separated list of additional contexts for frontend authentication.';
 $_lang['setting_loginas.debug'] = 'Debug';
 $_lang['setting_loginas.debug_desc'] = 'Log debug information in the MODX error log.';
 $_lang['setting_loginas.login_context'] = 'Login Context';
