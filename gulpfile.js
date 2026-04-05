@@ -11,7 +11,7 @@ const gulp = require('gulp'),
 const banner = '/*!\n' +
     ' * <%= pkg.name %> - <%= pkg.description %>\n' +
     ' * Version: <%= pkg.version %>\n' +
-    ' * Build date: ' + format("yyyy-MM-dd", new Date()) + '\n' +
+    ' * Build date: ' + format('yyyy-MM-dd', new Date()) + '\n' +
     ' */';
 const year = new Date().getFullYear();
 
@@ -36,7 +36,7 @@ const scriptsMgr = function () {
     ])
         .pipe(concat('loginas.min.js'))
         .pipe(uglify())
-        .pipe(header(banner + '\n', {pkg: pkg}))
+        .pipe(header(banner + '\n', { pkg: pkg }))
         .pipe(gulp.dest('assets/components/loginas/js/mgr/'))
 };
 gulp.task('scripts', gulp.series(scriptsMgr));
@@ -45,28 +45,28 @@ const bumpCopyright = function () {
     return gulp.src([
         'core/components/loginas/model/loginas/loginas.class.php',
         'core/components/loginas/src/LoginAs.php',
-    ], {base: './'})
+    ], { base: './' })
         .pipe(replace(/Copyright 2025(-\d{4})? by/g, 'Copyright ' + (year > 2025 ? '2025-' : '') + year + ' by'))
         .pipe(gulp.dest('.'));
 };
 const bumpVersion = function () {
     return gulp.src([
         'core/components/loginas/src/LoginAs.php',
-    ], {base: './'})
+    ], { base: './' })
         .pipe(replace(/version = '\d+\.\d+\.\d+-?[0-9a-z]*'/ig, 'version = \'' + pkg.version + '\''))
         .pipe(gulp.dest('.'));
 };
 const bumpDocs = function () {
     return gulp.src([
-        'mkdocs.yml',
-    ], {base: './'})
+        'zensical.toml',
+    ], { base: './' })
         .pipe(replace(/&copy; 2025(-\d{4})?/g, '&copy; ' + (year > 2025 ? '2025-' : '') + year))
         .pipe(gulp.dest('.'));
 };
 const bumpRequirements = function () {
     return gulp.src([
         'docs/index.md',
-    ], {base: './'})
+    ], { base: './' })
         .pipe(replace(/[*-] MODX Revolution \d.\d.*/g, '* MODX Revolution ' + modxversion + '+'))
         .pipe(replace(/[*-] PHP (v)?\d.\d.*/g, '* PHP ' + phpversion + '+'))
         .pipe(gulp.dest('.'));
@@ -74,7 +74,7 @@ const bumpRequirements = function () {
 const bumpComposer = function () {
     return gulp.src([
         'core/components/loginas/composer.json',
-    ], {base: './'})
+    ], { base: './' })
         .pipe(replace(/"version": "\d+\.\d+\.\d+-?[0-9a-z]*"/ig, '"version": "' + pkg.version + '"'))
         .pipe(gulp.dest('.'));
 };
