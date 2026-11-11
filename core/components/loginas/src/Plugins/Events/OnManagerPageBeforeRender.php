@@ -26,10 +26,17 @@ class OnManagerPageBeforeRender extends Plugin
             } else {
                 $this->modx->controller->addJavascript($jsUrl . 'loginas.min.js?v=v' . $this->loginas->version);
             }
+            // Only the options used by the javascript, so no server paths are output
+            $config = [
+                'connectorUrl' => $this->loginas->getOption('connectorUrl'),
+                'targetUrl' => $this->loginas->getOption('targetUrl'),
+                'modxversion' => $this->loginas->getOption('modxversion'),
+                'allowManager' => $this->modx->hasPermission('loginas_loginas_manager'),
+            ];
             $this->modx->controller->addHtml(
                 '<script type="text/javascript">
                     Ext.onReady(function() {
-                        LoginAs.config = ' . json_encode($this->loginas->options, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES) . ';
+                        LoginAs.config = ' . json_encode($config, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG) . ';
                     });
                 </script>'
             );

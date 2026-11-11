@@ -2,7 +2,7 @@
 /**
  * LoginAs
  *
- * Copyright 2025 by Thomas Jakobi <office@treehillstudio.com>
+ * Copyright 2025-2026 by Thomas Jakobi <office@treehillstudio.com>
  *
  * @package loginas
  * @subpackage classfile
@@ -39,7 +39,7 @@ class LoginAs
      * The version
      * @var string $version
      */
-    public $version = '1.0.2';
+    public $version = '1.1.0';
 
     /**
      * The class options
@@ -89,16 +89,44 @@ class LoginAs
 
         $this->packageName = $this->modx->lexicon('loginas');
 
-        $this->modx->addPackage($this->namespace, $this->getOption('modelPath'));
-
         // Add default options
         $this->options = array_merge($this->options, [
             'debug' => (bool)$this->getOption('debug', $options, false),
             'modxversion' => $modxversion['version'],
-            'targetUrl' => $this->modx->makeUrl($this->getOption('login_id', $options, $this->modx->getOption('site_start'))),
+            'targetUrl' => $this->getTargetUrl($options),
             'loginContext' => $this->getOption('login_context', $options, 'web'),
             'addContexts' => $this->getOption('add_contexts', $options, ''),
         ]);
+    }
+
+    /**
+     * Get the URL of the resource the frontend login is redirected to.
+     *
+     * The context of the resource is passed to makeUrl, otherwise MODX logs a
+     * warning, if the URL is generated in the manager context.
+     *
+     * @param array $options An array of options that override local options.
+     * @return string
+     */
+    private function getTargetUrl($options = [])
+    {
+        // Fall back to the site start, if the login_id setting is empty or 0
+        $loginId = (int)$this->getOption('login_id', $options, 0);
+        if (!$loginId) {
+            $loginId = (int)$this->modx->getOption('site_start');
+        }
+        if (!$loginId) {
+            return '';
+        }
+
+        $c = $this->modx->newQuery('modResource', ['id' => $loginId]);
+        $c->select('context_key');
+        $contextKey = (string)$this->modx->getValue($c->prepare());
+        if ($contextKey === '') {
+            return '';
+        }
+
+        return $this->modx->makeUrl($loginId, $contextKey, '', 'full');
     }
 
     /**

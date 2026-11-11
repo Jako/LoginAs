@@ -1,7 +1,7 @@
 {
   "name": "treehillstudio/loginas",
-  "description": "Login as manager user into frontend accounts without a password",
-  "version": "1.0.2",
+  "description": "Log in as another MODX user in the frontend or in the manager without a password",
+  "version": "1.1.0",
   "authors": [
     {
       "name": "Thomas Jakobi",

@@ -2,7 +2,7 @@
 /**
  * LoginAs
  *
- * Copyright 2025 by Thomas Jakobi <office@treehillstudio.com>
+ * Copyright 2025-2026 by Thomas Jakobi <office@treehillstudio.com>
  *
  * @package loginas
  * @subpackage classfile

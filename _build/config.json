@@ -1,9 +1,9 @@
 {
   "name": "LoginAs",
   "lowCaseName": "loginas",
-  "description": "Login as manager user into frontend accounts without a password",
+  "description": "Log in as another MODX user in the frontend or in the manager without a password",
   "author": "Thomas Jakobi",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "package": {
     "menus": [
       {
@@ -19,7 +19,7 @@
       "plugins": [
         {
           "name": "LoginAs",
-          "description": "Login as manager user into frontend accounts without a password",
+          "description": "Log in as another MODX user in the frontend or in the manager without a password",
           "file": "loginas.plugin.php",
           "events": [
             "OnManagerPageBeforeRender",

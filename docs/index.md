@@ -1,10 +1,10 @@
 # LoginAs
 
-Login as manager user into frontend accounts without a password. This MODX
-Extra adds menu entry in the user menu that allows you to select a MODX user and
-log in as that user in the frontend without a password. If you are logged as
-manager user, you can also use the password `loginas` to log into a web user
-account in the frontend.
+Log in as another MODX user in the frontend or in the manager without a
+password. This MODX Extra adds an entry to the user menu of the manager that
+allows you to select a MODX user and log in as that user. If you are logged into
+the manager, you can also use the password `loginas` to log into a web user
+account in a frontend login form.
 
 ### Requirements
 
@@ -14,10 +14,14 @@ account in the frontend.
 ### Features
 
 * Menu entry in the user menu of the manager that allows you to select a MODX
-  user and log in as that user in the frontend without a password
-* Log in as user in the frontend with the password `loginas`
-* The menu entry and the global password is available for MODX manager users
-  that have the `loginas_loginas` permission assigned.
+  web user and log in as that user in the frontend without a password.
+* Optionally log into the manager as another manager user, after a
+  confirmation that you will be logged out as the current manager user.
+* Log in as user in a frontend login form with the password `loginas`.
+* The features are restricted by the `loginas_loginas` and
+  `loginas_loginas_manager` permissions. Only sudo users can log in as another
+  sudo user.
+* Each login with the menu entry is logged in the manager log.
 
 ### License
 

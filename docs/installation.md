@@ -9,7 +9,7 @@ If you can't access the MODX Extras Repository in your MODX installation, you
 can manually install LoginAs.
 
 * Download the transport package from [MODX
-  Extras](https://modx.com/extras/package/loginasofterms) (or one of the pre
+  Extras](https://modx.com/extras/package/loginas) (or one of the pre
   built transport packages in
   [_packages](https://github.com/Jako/LoginAs/tree/master/_packages))
 * Upload the zip file to your MODX installation's `core/packages` folder or

@@ -14,7 +14,7 @@ LoginAs.combo.User = function (config) {
         minChars: 2,
         autoSelect: false,
     });
-    MODx.combo.User.superclass.constructor.call(this, config);
+    LoginAs.combo.User.superclass.constructor.call(this, config);
 };
 Ext.extend(LoginAs.combo.User, MODx.combo.ComboBox);
 Ext.reg('loginas-combo-user', LoginAs.combo.User);

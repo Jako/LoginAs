@@ -1,16 +1,17 @@
 # LoginAs
 
-Login as manager user into frontend accounts without a password.
+Log in as another MODX user in the frontend or in the manager without a password.
 
 - Author: Thomas Jakobi <office@treehillstudio.com>
 - License: GNU GPLv2
 
 ## Features
 
-This MODX Extra adds menu entry in the user menu that allows you to select a
-MODX user and log in as that user in the frontend without a password. If you are
-logged as manager user, you can also use the password `loginas` to log into a
-web user account in the frontend.
+This MODX Extra adds an entry to the user menu of the manager that allows you to
+select a MODX user and log in as that user in the frontend without a password.
+With an additional permission, you can also log into the manager as another
+manager user. If you are logged into the manager, you can also use the password
+`loginas` to log into a web user account in a frontend login form.
 
 ## Installation
 
